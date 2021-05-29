@@ -1,0 +1,70 @@
+body {
+    background: linear-gradient(to right, black,
+            black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle,
+.circle:nth-child(4),
+.circle:nth-child(3) {
+    position: absolute;
+    border: 5px solid;
+    border-radius: 50%;
+}
+
+.circle:nth-child(1),
+.circle:nth-child(3) {
+    width: 160px;
+    height: 160px;
+    border-color: yellow #505050 yellow #505050;
+    animation: spin 1000ms alternate infinite;
+}
+
+.circle:nth-child(2),
+.circle:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    border-color: #505050 yellow #505050 yellow;
+    animation: reverseSpin 1000ms linear infinite;
+}
+
+.circle:nth-child(3) {
+    width: 80px;
+    height: 80px;
+}
+
+.circle:nth-child(4) {
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reverseSpin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
